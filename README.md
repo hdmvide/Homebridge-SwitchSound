@@ -5,10 +5,7 @@ Each button is linked (and will play) a single audio file or a folder of audio f
 In the latter case, pressing the button will randomly select and play one of the audio files present in the specified path.
 For each button you can adjust the volume of the audio playback. The volume cannot be adjusted during playback but only before pressing the button.
 
-<img src="https://dl.dropboxusercontent.com/s/ku7y2oraedf9edn/01.jpg" align="center" height="400">
-<img src="https://dl.dropboxusercontent.com/s/01ukrl9gh47u4v5/02.jpg" align="center" height="400">
-<img src="https://dl.dropboxusercontent.com/s/8s03fkwgeybrewg/03.jpg" align="center" height="400">
-<img src="https://dl.dropboxusercontent.com/s/24kvtmpr9tjsd2y/04.jpg" align="center" height="400">
+<img src="https://dl.dropboxusercontent.com/s/ku7y2oraedf9edn/01.jpg" align="center" height="400"> <img src="https://dl.dropboxusercontent.com/s/01ukrl9gh47u4v5/02.jpg" align="center" height="400"> <img src="https://dl.dropboxusercontent.com/s/8s03fkwgeybrewg/03.jpg" align="center" height="400"> <img src="https://dl.dropboxusercontent.com/s/24kvtmpr9tjsd2y/04.jpg" align="center" height="400">
 
 
 ## Install Omxplayer
