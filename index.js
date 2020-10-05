@@ -3,7 +3,6 @@
 var Accessory, Service, Characteristic, UUIDGen, HAPServer;
 var accessories = [];
 var accessoriesSound = [];
-var amixer = require('./lib/alsa.js')
 const { spawn } = require('child_process');
 const fs = require('fs');
 
@@ -38,20 +37,6 @@ SwitchSoundPlatform.prototype.didFinishLaunching = function() {
   this.loadSoundAccesories(function() {
     this.outline('Sound Accessories Loaded!', false);
   }.bind(this));
-
-  if(this.debug) {
-    this.alsaMixer = new amixer();
-    this.alsaMixer.amixer([], function(err, message) {
-      this.outline('AlsaMixer amixer', false);
-      if(err) {
-        this.outline('Error' + err.message, false);
-      }
-      if(message) {
-        this.outline('AlsaMixer defaultDevice', false);
-        this.outline(message, false);
-      }
-    }.bind(this));
-  }
 };
 
 
@@ -114,7 +99,7 @@ SwitchSoundPlatform.prototype.configureAccessory = function(accessory) {
 
 
 SwitchSoundPlatform.prototype.addAccessory = function(data) {
-  
+
   if (!accessories[data.id]) {
     this.log('Adding accessory ' + data.name);
 
@@ -157,7 +142,7 @@ SwitchSoundPlatform.prototype.addAccessory = function(data) {
 SwitchSoundPlatform.prototype.setPowerState = function(currentSwitch, powerState, callback) {
 
   var  _playerSoundOptions = [];
-  
+
   if(powerState === true) {
 
     if (currentSwitch.sequence || !accessoriesSound[currentSwitch.id]){
@@ -182,7 +167,7 @@ SwitchSoundPlatform.prototype.setPowerState = function(currentSwitch, powerState
       var volumeTmp;
       if (currentValue){
         if(currentSwitch.volume !== undefined && currentSwitch.volume !== '') {
-      	  
+
       	  if (currentSwitch.volume > 0){
         	volumeTmp = 100-currentSwitch.volume;
       		volumeTmp = Math.floor((volumeTmp * 4000) / 100);
@@ -208,13 +193,13 @@ SwitchSoundPlatform.prototype.setPowerState = function(currentSwitch, powerState
       if (currentSwitch.loop){
         _playerSoundOptions = _playerSoundOptions.concat(["--loop"]); // spawn changes this.
       }
-      
+
       var playerSoundPlayer = this.defaultSoundPlayer;
 
       if(currentSwitch.soundPlayer !== undefined && currentSwitch.soundPlayer !== '') {
         playerSoundPlayer = currentSwitch.soundPlayer;
       }
-      
+
       currentSwitch.isPlaying = true;
 
       currentSwitch.playProcess = new spawn(playerSoundPlayer, _playerSoundOptions);
