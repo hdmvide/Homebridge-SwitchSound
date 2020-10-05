@@ -66,10 +66,10 @@ Let's open the Homebridge configuration and create the new SwitchSound platform 
 * `accessory` \<string\> **required**: identifies the accessory. It must always be SwitchSound
 * `id` \<string\> **required**: identifies the serial code of the accessory. You can write whatever you want
 * `name` \<string\> **required**: identifies the name of the button that will appear in HomeKit
-* `shuffle` \<string\> **required**: identifies the path of the audio file to be connected and playing. In case of multiple files in shuffle, you can stop at the folder
+* `soundFile` \<string\> **required**: identifies the path of the audio file to be connected and playing. In case of multiple files in shuffle, you can stop at the folder
 * `soundOptions` \<string\> **optional**: For the more experienced, it is possible to pass additional parameters to omxplayer
-* `shuffle` \<string\> **optional**: activates shuffle mode. In this case it is necessary to indicate the path of a folder within the soundFile parameter
-* `loop` \<string\> **optional**: play the audio file endlessly until the user turns off the button from HomeKit
-* `volume` \<string\> **required**: It is necessary to indicate a starting volume
-* `debug` \<string\> **optional**: enable debug mode with more output instructions
-* `sequence` \<string\> **optional**: offers the possibility to play an audio file several times consecutively. Useful for short audio files
+* `shuffle` \<bool\> **optional**: activates shuffle mode. In this case it is necessary to indicate the path of a folder within the soundFile parameter
+* `loop` \<bool\> **optional**: play the audio file endlessly until the user turns off the button from HomeKit
+* `volume` \<int\> **required**: It is necessary to indicate a starting volume (0-100)
+* `debug` \<bool\> **optional**: enable debug mode with more output instructions
+* `sequence` \<bool\> **optional**: offers the possibility to play an audio file several times consecutively. Useful for short audio files
