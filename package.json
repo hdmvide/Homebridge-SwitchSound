@@ -1,0 +1,30 @@
+{
+  "name": "homebridge-switchsound",
+  "version": "1.0.0",
+  "description": "Homebridge SwitchSound is a plugin for Raspberry Pi and Linux systems.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdmvide/Homebridge-SwitchSound.git"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "bluetooth",
+    "audio",
+    "sound",
+    "switch",
+    "button",
+    "raspberry",
+    "pi",
+    "smarthome"
+  ],
+  "author": "hackerdm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hdmvide/Homebridge-SwitchSound/issues"
+  },
+  "homepage": "https://github.com/hdmvide/Homebridge-SwitchSound#readme"
+}
