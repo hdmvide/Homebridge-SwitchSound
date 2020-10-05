@@ -1,6 +1,6 @@
 {
   "name": "homebridge-switchsound",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Homebridge SwitchSound is a plugin for Raspberry Pi and Linux systems.",
   "main": "index.js",
   "scripts": {
