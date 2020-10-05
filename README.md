@@ -33,7 +33,6 @@ Let's open the Homebridge configuration and create the new SwitchSound platform 
     "name": "SwitchSound",
     "debug": false,
     "defaultSoundPlayer": "/usr/bin/omxplayer.bin",
-    "enableAlsaOutput": false,
     "accessories": [
         {
             "accessory": "SwitchSound",
