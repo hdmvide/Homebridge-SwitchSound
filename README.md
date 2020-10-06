@@ -74,3 +74,15 @@ Let's open the Homebridge configuration and create the new SwitchSound platform 
 * `volume` \<int\> **required**: It is necessary to indicate a starting volume (0-100)
 * `debug` \<bool\> **optional**: enable debug mode with more output instructions
 * `sequence` \<bool\> **optional**: offers the possibility to play an audio file several times consecutively. Useful for short audio files
+
+## Permission
+if the playback of your audio files does not work, it may be necessary to assign permissions to the user with whom you started homebridge (if different from pi).
+
+Run these commands:
+
+```code
+sudo passwd INSERT_YOUR_USERNAME_HOMEBRIDGE
+sudo usermod -a -G video INSERT_YOUR_USERNAME_HOMEBRIDGE
+```
+
+Now reboot your raspberry. 
