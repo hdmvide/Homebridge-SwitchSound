@@ -239,9 +239,9 @@ SwitchSoundPlatform.prototype.setPowerState = function(currentSwitch, powerState
         currentSwitch.isPlaying = false;
       });
 
-      callback();
-
     }
+
+    callback();
 
   } else {
 
