@@ -258,13 +258,18 @@ SwitchSoundPlatform.prototype.setPowerState = function(currentSwitch, powerState
       this.outline('Exit Code .... ' + currentSwitch.playProcess.exitCode, currentSwitch.debug);
 
       if(currentSwitch.playProcess.killed === false) {
-        // currentSwitch.playProcess.kill('SIGHUP');
-        // currentSwitch.playProcess.kill('SIGINT');
-        currentSwitch.playProcess.kill('SIGTERM');
 
-        this.outline('Killing PID .... ' + currentSwitch.playProcess.pid, currentSwitch.debug);
-        this.outline('Kill State .... ' + currentSwitch.playProcess.killed, currentSwitch.debug);
-        this.outline('Exit Code .... ' + currentSwitch.playProcess.exitCode, currentSwitch.debug);
+        try {
+          // currentSwitch.playProcess.kill('SIGHUP');
+          // currentSwitch.playProcess.kill('SIGINT');
+          currentSwitch.playProcess.kill('SIGTERM');
+
+          this.outline('Killing PID .... ' + currentSwitch.playProcess.pid, currentSwitch.debug);
+          this.outline('Kill State .... ' + currentSwitch.playProcess.killed, currentSwitch.debug);
+          this.outline('Exit Code .... ' + currentSwitch.playProcess.exitCode, currentSwitch.debug);
+        } catch (e) {
+          this.outline('Error .... ' + e.message, currentSwitch.debug);
+        }
 
         currentSwitch.playProcess = null;
         callback();
@@ -274,12 +279,16 @@ SwitchSoundPlatform.prototype.setPowerState = function(currentSwitch, powerState
       if(currentSwitch.playProcess.killed !== 1 && currentSwitch.playProcess.exitCode === 0) {
         this.outline('Exit Kill PID .... ' + currentSwitch.playProcess.pid, currentSwitch.debug);
 
-        // currentSwitch.playProcess.kill('SIGHUP');
-        // currentSwitch.playProcess.kill('SIGINT');
-        currentSwitch.playProcess.kill('SIGTERM');
+        try {
+          // currentSwitch.playProcess.kill('SIGHUP');
+          // currentSwitch.playProcess.kill('SIGINT');
+          currentSwitch.playProcess.kill('SIGTERM');
 
-        this.outline('Kill State .... ' + currentSwitch.playProcess.killed, currentSwitch.debug);
-        this.outline('Exit Code .... ' + currentSwitch.playProcess.exitCode, currentSwitch.debug);
+          this.outline('Kill State .... ' + currentSwitch.playProcess.killed, currentSwitch.debug);
+          this.outline('Exit Code .... ' + currentSwitch.playProcess.exitCode, currentSwitch.debug);
+        } catch (e) {
+          this.outline('Error .... ' + e.message, currentSwitch.debug);
+        }
 
         currentSwitch.playProcess = null;
         callback();
